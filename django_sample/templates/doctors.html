@@ -8,7 +8,19 @@ doctors
 <h2 class="text-center p-3">Our doctors</h2>
 <hr>
 
-<div class="container">
-    
+<div class="container text-center bg-light">
+    {%for d in doc%}
+    <div class="card text-center mx-3 my-3" style="width: 18rem; height: 30rem; display: inline-block;">
+        <img class="card-img-top" src="{{d.doc_image.url}}" alt="Card image cap" style="height: 20rem;">
+        <div class="card-body">
+          <h5 class="card-title">Dr. {{d.doc_name}}</h5>
+          <p class="card-text">{{d.doc_spec}}</p>
+          <h6 class="card-text">{{d.dep_name}} Department</h6>
+          
+        </div>
+      </div>
+
+      {%endfor%}
+
 </div>
 {% endblock%}
